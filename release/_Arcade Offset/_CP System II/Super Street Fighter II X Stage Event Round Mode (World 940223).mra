@@ -24,7 +24,7 @@
 <misterromdescription>
     <about author="jotego" webpage="https://patreon.com/jotego" twitter="@topapate" source="https://jotego/jtcores"/>
     <rotation>horizontal</rotation>
-    <name>Super Street Fighter II X: Grand Master Challenge (Japan 940223) [Stage Select + Event Mode + Round Count + Free Play v7.4-nopin]</name>
+    <name>Super Street Fighter II X: Grand Master Challenge (Japan 940223) [Stage Select + Event Mode + Round Count + Free Play]</name>
     <setname>ssf2xjr1</setname>
     <mameversion>0282</mameversion>
     <year>1994</year>
@@ -152,6 +152,9 @@
     <nvram index="2" size="128"/>
     <rom index="1">
         <part>00 80</part>
+        <!-- match-point danger music: hook stock gate @maincpu 0x547DC -> jmp mp_gate; mp_gate in raw-FF free space @0x24B7F4 -->
+        <patch offset="0x5481C">af c2 24 53 d1 b6 2f 07 bb 7a 0f d1</patch>
+        <patch offset="0x24B834">c6 a6 c8 d2 1f fd b1 1d 35 fd e7 99 4c c4 f3 91 fd 1a d3 d7 88 b3 bf 3d 70 2e 2d 99 54 ca 2a dd 25 79 f0 10 06 80 67 cf 18 17 5e ce c5 97 fe f5</patch>
     </rom>
     <switches page_id="1" page_name="Switches" base="16" default="ff,ff">
         <DSWA/>
